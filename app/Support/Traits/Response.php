@@ -19,8 +19,8 @@ trait Response
     public function responseError($code)
     {
         return response()->json([
-            'code' => $code,
-            'message' => ErrDesc::getDesc()[$code],
+            'code' => $code ?? ErrCode::UNKNOWN_ERROR,
+            'message' => ErrDesc::getDesc()[$code] ?? ErrDesc::getDesc()[ErrCode::UNKNOWN_ERROR],
             'data' => []
         ]);
     }

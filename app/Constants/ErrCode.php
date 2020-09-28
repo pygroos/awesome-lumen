@@ -22,5 +22,5 @@ class ErrCode
 
     const UPDATE_DATA_ERROR = self::ABNORMAL_ERROR + 2;
 
-    const NETWORK_ERROR = 99999;
+    const UNKNOWN_ERROR = 99999;
 }

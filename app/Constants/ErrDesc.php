@@ -13,7 +13,7 @@ class ErrDesc
             ErrCode::SAVE_DATA_ERROR => '数据保存失败',
             ErrCode::UPDATE_DATA_ERROR => '数据更新失败',
 
-            ErrCode::NETWORK_ERROR => '网络错误',
+            ErrCode::UNKNOWN_ERROR => '未知错误',
         ];
     }
 }
