@@ -1,8 +1,7 @@
 <?php
 
 if (! function_exists('test')) {
-    function test()
-    {
+    function test() {
         return 'test';
     }
 }

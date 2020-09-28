@@ -18,9 +18,8 @@ class ErrorCatchMiddleware
     public function handle($request, Closure $next)
     {
         $response = $next($request);
-        if (ErrCode::SUCCESS != $response->original['code']) {
-            Log::info('request', [$request]);
-            Log::info('response', [$response]);
+        if (isset($response->original['code']) && $response->original['code'] > ErrCode::ABNORMAL_ERROR) {
+            Log::info('trace_log', ['request' => [$request->method(), $request->url(), $request->all()], 'response' => $response->original]);
         }
 
         return $response;
